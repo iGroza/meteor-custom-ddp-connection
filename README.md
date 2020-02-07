@@ -37,11 +37,13 @@ run your project
 # linux example
 export BACKEND_URL=http://some-server.com
 meteor run
-
+```
+``` bash
 # windows cmd example
 set BACKEND_URL=http://some-server.com
 meteor run
-
+```
+``` powershell
 # windows powershell example
 $env:BACKEND_URL='http://some-server.com'
 meteor run
