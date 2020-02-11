@@ -5,7 +5,7 @@
 - Set the environment variable **BACKEND_URL** to the URL of the remote server
 
 > Note!
-> To creating a Mongo collection on the **client side** use the `Template.name.onRendered()` method
+> To creating a Mongo collection on the **client side** use the [`onReady` callback](https://docs.meteor.com/api/pubsub.html#Meteor-subscribe)
 
 ## Example
 
@@ -15,22 +15,20 @@ import { Template } from 'meteor/templating';
 
 let AppCommands;
 
-Template.mainLayout.onRendered(() => {
-    AppCommands = new Mongo.Collection('commands');
-
-    // Check your collection
-    AppCommands.find({}).observeChanges({
-        added(id, fields) {
-            console.log('# commands added', id, fields);
-        }
-    })
-});
-
 Meteor.startup(() => {
-    Tracker.autorun(() => {
-        Meteor.subscribe('commands');
-    })
-})
+    Meteor.subscribe('commands', {
+        onReady() {
+            AppCommands = new Mongo.Collection('commands');
+
+            // Check your collection
+            AppCommands.find({}).observeChanges({
+                added(id, fields) {
+                    console.log('# commands added', id, fields);
+                }
+            });
+        }
+    });
+});
 ```
 run your project
 ``` bash
