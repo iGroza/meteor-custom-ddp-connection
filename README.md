@@ -1,7 +1,7 @@
 # Setup custom backend server for Meteor app
 ## Quick start
 - To install this package, just move those in `packages` folder in your project
-- Add line `igroza:ddp-backend` to `your_project_folder/.meteor/package` file or run `meteor add igroza:ddp-backend`
+- Run `meteor add xneon:ddp-backend`
 - Set the environment variable **BACKEND_URL** to the URL of the remote server
 
 > Note!
