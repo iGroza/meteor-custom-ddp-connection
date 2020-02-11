@@ -1,6 +1,6 @@
 Package.describe({
   name: 'xneon:ddp-backend',
-  version: '1.0',
+  version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'setup your env variable "BACKEND_URL" for connect to another backend server  ',
   // URL to the Git repository containing the source code for this package.
