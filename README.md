@@ -1,10 +1,9 @@
 # Setup custom backend server for Meteor app
 ## Quick start
-- To install this package, just move those in `packages` folder in your project
 - Run `meteor add xneon:ddp-backend`
 - Set the environment variable **BACKEND_URL** to the URL of the remote server
 
-> Note!
+>### Note!
 > To creating a Mongo collection on the **client side** use the [`onReady` callback](https://docs.meteor.com/api/pubsub.html#Meteor-subscribe)
 
 ## Example
@@ -30,7 +29,7 @@ Meteor.startup(() => {
     });
 });
 ```
-run your project
+## Run your project
 ``` bash
 # linux example
 export BACKEND_URL=http://some-server.com
